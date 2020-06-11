@@ -1,29 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:myfirstflutter/location_detail.dart';
+import 'package:myfirstflutter/mocks/location_mock.dart';
+import 'package:myfirstflutter/models/location.dart';
 
 // void main() {
 //   runApp(MyApp());
 // }
 void main() {
-  return runApp(MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('Hello World'),
-          ),
-          body: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  decoration: BoxDecoration(color: Colors.lightBlueAccent),
-                  child: Text('My first app'),
-                ),
-                Container(
-                  decoration: BoxDecoration(color: Colors.purpleAccent),
-                  child: Text('My second app'),
-                ),
-                Container(
-                  decoration: BoxDecoration(color: Colors.lightGreenAccent),
-                  child: Text('My third app'),
-                ),
-              ]))));
+  final Location mockLocation = MockLocation.fetchAny();
+  return runApp(MaterialApp(home: LocationDetails(mockLocation)));
 }
